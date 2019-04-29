@@ -1,0 +1,8 @@
+version: "3.6"
+services:
+  reverse-proxy:
+    image: traefik:1.7.9-alpine
+    volumes:
+      - ./config/traefik.toml:/etc/traefik/traefik.toml
+    ports:
+      - "4000:80"

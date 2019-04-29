@@ -1,0 +1,28 @@
+defaultEntryPoints = ["http"]
+
+logLevel = "DEBUG"
+
+[entryPoints]
+  [entryPoints.http]
+    address = ":80"
+
+[file]
+
+[backends]
+  [backends.api]
+    [backends.api.servers.server1]
+       url = "http://host.docker.internal:8299"
+  [backends.frontend]
+    [backends.frontend.servers.server1]
+       url = "http://host.docker.internal:3000"
+   
+[frontends]
+  [frontends.api]
+      backend = "api"
+      [frontends.api.routes.route1]
+          rule = "PathPrefix: /api/"
+  [frontends.frontend]
+      backend = "frontend"
+      [frontends.frontend.routes.route1]
+          rule = "PathPrefix: /"
+  

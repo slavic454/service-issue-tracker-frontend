@@ -13,9 +13,9 @@ class List extends React.Component {
   }
 
   renderRows = () => {
-    const { data } = this.props;
+    const { data, onClickRow } = this.props;
     return data.map(row => (
-      <tr key={uuid()}>
+      <tr onClick={() => { onClickRow({item: row, showModal: true})}} key={uuid()}>
         {this.renderCells(row)}
       </tr>
     ));

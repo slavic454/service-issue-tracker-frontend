@@ -2,6 +2,8 @@
     border: solid 1px #DDEEEE;
     border-collapse: collapse;
     border-spacing: 0;
+    margin:auto;
+    margin-top: 20px;
     font: normal 13px Arial, sans-serif;
     & thead th {
         background-color: #DDEFEF;
@@ -16,5 +18,11 @@
         color: #333;
         padding: 10px;
         text-shadow: 1px 1px 1px #fff;
+    }
+    tr {
+        &:hover {
+            background-color: #DDEFEF;
+            cursor: pointer;
+        }
     }
 }
